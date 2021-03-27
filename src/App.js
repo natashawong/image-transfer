@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import QuestionBlock from './QuestionBlock';
 
 const axios = require('axios')
 
@@ -31,6 +32,13 @@ export default class App extends Component {
           <img src={this.state.image}/>
           <h1>Your image style transfer result is: </h1>
           <img src={this.state.loading == 1 ? "http://c3363ecd6fb9.ngrok.io/result" : null}/>
+          <QuestionBlock
+            questionNumber={1}
+            numbering={"1."}
+            prompt={"Test question 1!"}
+            // error in mapping here below, pls edit, use javascript array
+            options={[{A: "A", B:"B", C:"C", D:"D"}]}
+          />
         </div>
       )
   }
