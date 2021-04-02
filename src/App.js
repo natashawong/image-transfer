@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import QuestionBlock from './QuestionBlock';
+import {Link } from "react-router-dom";
 import loading from './loading.gif';
 
 const axios = require('axios')
@@ -22,6 +23,11 @@ export default class App extends Component {
       imageRaw: event.target.files[0],
       isUploaded: true
     })
+  }
+
+  handleSubmit(event) {
+    alert('Your response was submitted: ' + this.state.value);
+    event.preventDefault();
   }
 
   onClick = () => {
@@ -63,8 +69,17 @@ export default class App extends Component {
             <button onClick={this.onClick} disabled={!this.state.isUploaded}>Style your image!</button>
           </div>
 
-          {this.state.isSubmitted ? this.uploadScreen() : null}
-
+          <div>
+            <p>
+              Not sure which famous artist to choose?
+              <br />
+              Click on the button below.
+            </p>
+            <Link to="/SurveyPage"><button>
+              Which artist are you?
+            </button>
+            </Link>
+          </div>
           {/* <QuestionBlock
             questionNumber={1}
             numbering={"1."}
@@ -73,6 +88,7 @@ export default class App extends Component {
             options={[{A: "A", B:"B", C:"C", D:"D"}]}
           /> */}
         </div>
+         
       )
   }
 }
