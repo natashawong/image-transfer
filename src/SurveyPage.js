@@ -1,74 +1,122 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import questionAPI from './question';
-import QuestionBox from './components/QuestionBox';
-import Result from './components/ResultBox';
-  
-class Quiz extends Component {
+import React, { Component } from "react";
+
+class SurveyPage extends Component {
   constructor() {
     super();
     this.state = {
-      questionBank: [],
-      score: 0,
-      responses: 0
+      name: "React",
+      questionBank: []
     };
+    this.onValueChange = this.onValueChange.bind(this);
+    this.formSubmit = this.formSubmit.bind(this);
   }
-  
-  // Function to get question from ./question
-  getQuestions = () => {
-    questionAPI().then(question => {
-      this.setState({questionBank: question});
-    });
-  };
-  
-  // Set state back to default and call function
-  playAgain = () => {
-    this.getQuestions();
-    this.setState({score: 0, responses: 0});
-  };
-  
-  // Function to compute scores
-  computeAnswer = (answer, correctAns) => {
-    if (answer === correctAns) {
-      this.setState({
-        score: this.state.score + 1
-      });
-    }
+
+
+  onValueChange(event) {
     this.setState({
-      responses: this.state.responses < 5
-        ? this.state.responses + 1
-        : 5
+      selectedOption: event.target.value
     });
-  };
-  
-  // componentDidMount function to get question
-  componentDidMount() {
-    this.getQuestions();
   }
-  
+
+  formSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.selectedOption)
+  }
+
   render() {
-    return (<div className="container">
-      <div className="title">
-        QuizOn
-      </div>
-  
-      {this.state.questionBank.length > 0 && 
-       this.state.responses < 5 && 
-       this.state.questionBank.map(({question, answers,
-       correct, questionId}) => <QuestionBox question=
-       {question} options={answers} key={questionId}
-       selected={answer => this.computeAnswer(answer, correct)}/>)}
-  
-      {
-        this.state.responses === 5
-          ? (<Result score={this.state.score}
-            playAgain={this.playAgain}/>)
-          : null
-      }
-  
-    </div>)
+    return (
+        <form onSubmit={this.formSubmit}>
+            <strong> What is your favorite shape?</strong>
+            <div id = "q1">
+            <div className="radio">
+                <label>
+                <input
+                    type="radio"
+                    value="Van Gogh"
+                    checked={this.state.selectedOption === "Van Gogh"}
+                    onChange={this.onValueChange}
+                    name = "question1"
+                />
+                Stars are out of this world!
+                </label>
+            </div>
+            <div className="radio">
+                <label>
+                <input
+                    type="radio"
+                    value="Matisse"
+                    checked={this.state.selectedOption === "Matisse"}
+                    onChange={this.onValueChange}
+                    name = "question1"
+                />
+                I'm very square.
+                </label>
+            </div>
+            <div className="radio">
+                <label>
+                <input
+                    type="radio"
+                    value="Monet"
+                    checked={this.state.selectedOption === "Monet"}
+                    onChange={this.onValueChange}
+                    name = "question1"
+                />
+                The shape of ~petals~
+                </label>
+            </div>
+            <div>
+                Selected option is : {this.state.selectedOption}
+            </div>
+            </div>
+            <div id ="q2">
+            <strong> What is your favorite shape?</strong>
+            <div className="radio">
+                <label>
+                <input
+                    type="radio"
+                    value="Van Gogh2"
+                    checked={this.state.selectedOption === "Van Gogh2"}
+                    onChange={this.onValueChange}
+                    name = "question2"
+                />
+                Stars are out of this world!
+                </label>
+            </div>
+            
+            <div className="radio">
+                <label>
+                <input
+                    type="radio"
+                    value="Matisse2"
+                    checked={this.state.selectedOption === "Matisse2"}
+                    onChange={this.onValueChange}
+                    name = "question2"
+                />
+                I'm very square.
+                </label>
+            </div>
+            <div className="radio">
+                <label>
+                <input
+                    type="radio"
+                    value="Monet2"
+                    checked={this.state.selectedOption === "Monet2"}
+                    onChange={this.onValueChange}
+                    name = "question2"
+                />
+                The shape of ~petals~
+                </label>
+            </div>
+            </div>
+            <div>
+                Selected option is : {this.state.selectedOption}
+            </div>
+          <button className="btn btn-default" type="submit">
+            Submit
+          </button>
+        </form>
+    );
   }
 }
 
-ReactDOM.render(<Quiz/>, document.getElementById("root"));
-export default Quiz;
+export default SurveyPage;

@@ -1,23 +1,49 @@
 import React, {useState} from "react";
+import PropTypes from 'prop-types';
   
-// Function to question inside our app
+
 const QuestionBox = ({ question, options, selected}) => {
   const [answer, setAnswer] = useState(options);
   return (
     <div className="questionBox">
-        <div className="question">{question}</div>
-        {answer.map((text, index) => (
-          <button
-              key={index}
-              className="answerBtn"
-              onClick={()=>{
-                    setAnswer();
-                    selected(text);
-                  }}> {text}
-         </button>
-        ))}
+        <strong> What is your favorite shape?</strong>
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="Van Gogh"
+                checked={this.state.selectedOption === "Van Gogh"}
+                onChange={this.onValueChange}
+              />
+              Stars are out of this world!
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="Matisse"
+                checked={this.state.selectedOption === "Matisse"}
+                onChange={this.onValueChange}
+              />
+              I'm very square.
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="Monet"
+                checked={this.state.selectedOption === "Monet"}
+                onChange={this.onValueChange}
+              />
+              The shape of ~petals~
+            </label>
+          </div>
     </div>
+    
   )
 };
-  
+
+
 export default QuestionBox;

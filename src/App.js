@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import QuestionBlock from './QuestionBlock';
 import {Link } from "react-router-dom";
 import loading from './loading.gif';
 
