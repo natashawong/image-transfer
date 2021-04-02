@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link } from "react-router-dom";
 class SurveyPage extends Component {
   constructor() {
     super();
@@ -65,55 +65,13 @@ class SurveyPage extends Component {
                 </label>
             </div>
             <div>
-                Selected option is : {this.state.selectedOption}
-            </div>
-            </div>
-            <div id ="q2">
-            <strong> What is your favorite shape?</strong>
-            <div className="radio">
-                <label>
-                <input
-                    type="radio"
-                    value="Van Gogh2"
-                    checked={this.state.selectedOption === "Van Gogh2"}
-                    onChange={this.onValueChange}
-                    name = "question2"
-                />
-                Stars are out of this world!
-                </label>
+                <h3>Your selected artist is : {this.state.selectedOption} </h3>
             </div>
             
-            <div className="radio">
-                <label>
-                <input
-                    type="radio"
-                    value="Matisse2"
-                    checked={this.state.selectedOption === "Matisse2"}
-                    onChange={this.onValueChange}
-                    name = "question2"
-                />
-                I'm very square.
-                </label>
-            </div>
-            <div className="radio">
-                <label>
-                <input
-                    type="radio"
-                    value="Monet2"
-                    checked={this.state.selectedOption === "Monet2"}
-                    onChange={this.onValueChange}
-                    name = "question2"
-                />
-                The shape of ~petals~
-                </label>
-            </div>
-            </div>
-            <div>
-                Selected option is : {this.state.selectedOption}
-            </div>
-          <button className="btn btn-default" type="submit">
-            Submit
-          </button>
+          <Link to="/"><button className="btn btn-default" type="submit">
+            Back to home
+          </button></Link>
+          </div>
         </form>
     );
   }
