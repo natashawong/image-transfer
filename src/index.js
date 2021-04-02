@@ -12,7 +12,7 @@ const rootElement = document.getElementById("root");
       <BrowserRouter>
        <Switch>
         <Route exact path="/" component={Page1} />
-        <Route path="/page2" component={Page2} />
+        <Route path="/SurveyPage" component={Page2} />
       </Switch>
       </BrowserRouter>,
       rootElement

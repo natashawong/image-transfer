@@ -1,77 +1,74 @@
-import React from "react";
-
-class SurveyPage extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-          value: '',
-          color: 'blue'
-        };
+import React, {Component} from "react";
+import ReactDOM from "react-dom";
+import questionAPI from './question';
+import QuestionBox from './components/QuestionBox';
+import Result from './components/ResultBox';
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    onRadioChange = (e) => {
-        this.setState({
-            color: e.target.value
-        });
-    }
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
-  
-    render() {
-      return (
-        <div className = "App">
-            <form onSubmit={this.handleSubmit}>
-            <strong> What is your favorite shape? </strong>
-            <ul>
-                <label>
-                    <input
-                    type="radio"
-                    value="red"
-                    checked={this.state.color === "blue"}
-                    onChange={this.onRadioChange}
-                    />
-                    <span>Stars are out of this world!</span>
-                </label>
-            </ul>
-            <ul>
-                <label>
-                    <input
-                    type="radio"
-                    value="red"
-                    checked={this.state.color === "red"}
-                    onChange={this.onRadioChange}
-                    />
-                    <span>I'm very square.</span>
-                </label>
-            </ul>
-            <ul>
-                <label>
-                    <input
-                    type="radio"
-                    value="red"
-                    checked={this.state.color === "red"}
-                    onChange={this.onRadioChange}
-                    />
-                    <span>A ~petal~ shape</span>
-                </label>
-            </ul>
-            <label>
-                Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
-            </form>
-        </div>
-      );
-    }
+class Quiz extends Component {
+  constructor() {
+    super();
+    this.state = {
+      questionBank: [],
+      score: 0,
+      responses: 0
+    };
   }
+  
+  // Function to get question from ./question
+  getQuestions = () => {
+    questionAPI().then(question => {
+      this.setState({questionBank: question});
+    });
+  };
+  
+  // Set state back to default and call function
+  playAgain = () => {
+    this.getQuestions();
+    this.setState({score: 0, responses: 0});
+  };
+  
+  // Function to compute scores
+  computeAnswer = (answer, correctAns) => {
+    if (answer === correctAns) {
+      this.setState({
+        score: this.state.score + 1
+      });
+    }
+    this.setState({
+      responses: this.state.responses < 5
+        ? this.state.responses + 1
+        : 5
+    });
+  };
+  
+  // componentDidMount function to get question
+  componentDidMount() {
+    this.getQuestions();
+  }
+  
+  render() {
+    return (<div className="container">
+      <div className="title">
+        QuizOn
+      </div>
+  
+      {this.state.questionBank.length > 0 && 
+       this.state.responses < 5 && 
+       this.state.questionBank.map(({question, answers,
+       correct, questionId}) => <QuestionBox question=
+       {question} options={answers} key={questionId}
+       selected={answer => this.computeAnswer(answer, correct)}/>)}
+  
+      {
+        this.state.responses === 5
+          ? (<Result score={this.state.score}
+            playAgain={this.playAgain}/>)
+          : null
+      }
+  
+    </div>)
+  }
+}
 
-export default SurveyPage;
+ReactDOM.render(<Quiz/>, document.getElementById("root"));
+export default Quiz;
