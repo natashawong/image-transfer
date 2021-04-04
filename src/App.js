@@ -67,7 +67,7 @@ export default class App extends Component {
             <img src={this.state.image} style={{maxWidth: "500px", maxHeight: "500px"}}/>
             <button onClick={this.onClick} disabled={!this.state.isUploaded}>Style your image!</button>
           </div>
-
+          {this.state.isSubmitted ? this.uploadScreen() : null}
           <div>
             <p>
               Not sure which famous artist to choose?
