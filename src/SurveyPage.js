@@ -117,7 +117,7 @@ export default class SurveyPage extends Component {
                     <br />
                     <input type="radio" value="Matisse" name="q3" /> Neons
                     <br />
-                    <input type="radio" value="Monet" name="q3" /> Hazey pastels
+                    <input type="radio" value="Monet" name="q3" /> Hazy pastels
                 </div>
 
                 <strong>What is your dream vacation spot?</strong>
