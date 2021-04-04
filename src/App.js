@@ -80,15 +80,8 @@ export default class App extends Component {
               Which artist are you?
             </button>
             </Link>
-            <Quiz />
+            {/* <Quiz /> */}
           </div>
-          {/* <QuestionBlock
-            questionNumber={1}
-            numbering={"1."}
-            prompt={"Test question 1!"}
-            // error in mapping here below, pls edit, use javascript array
-            options={[{A: "A", B:"B", C:"C", D:"D"}]}
-          /> */}
         </div>
          
       )
