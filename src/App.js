@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link } from "react-router-dom";
 import loading from './loading.gif';
+import Quiz from "./Quiz.js";
 
 const axios = require('axios')
 
@@ -61,6 +62,7 @@ export default class App extends Component {
   render() {
       return (
         <div>
+          
           <h1>Upload an image that you want to be changed into your chosen style:</h1>
           <div id="inputs">
             <input type="file" encType="multipart/form-data" accept="image/jpeg, image/png" name="image" id="file" onChange={this.handleChange}/>
@@ -78,6 +80,7 @@ export default class App extends Component {
               Which artist are you?
             </button>
             </Link>
+            <Quiz />
           </div>
           {/* <QuestionBlock
             questionNumber={1}

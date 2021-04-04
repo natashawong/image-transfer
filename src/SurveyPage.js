@@ -4,18 +4,27 @@ class SurveyPage extends Component {
   constructor() {
     super();
     this.state = {
-      name: "React",
-      questionBank: []
+      question1: "",
+      question2: "",
+      question3: "",
+      question4: "",
     };
     this.onValueChange = this.onValueChange.bind(this);
     this.formSubmit = this.formSubmit.bind(this);
   }
 
 
-  onValueChange(event) {
-    this.setState({
-      selectedOption: event.target.value
-    });
+  onValueChange = (event, question) => {
+    switch(question) {
+      case 1:
+        this.setState({question1: event.target.value})
+      case 2:
+        this.setState({question2: event.target.value})
+      case 3:
+        this.setState({question3: event.target.value})
+      case 4:
+        this.setState({question4: event.target.value})
+    } 
   }
 
   formSubmit(event) {
@@ -27,13 +36,13 @@ class SurveyPage extends Component {
     return (
         <form onSubmit={this.formSubmit}>
             <strong> What is your favorite shape?</strong>
-            <div id = "q1">
+            <div onChange={this.onValueChange(1)}>
             <div className="radio">
                 <label>
                 <input
                     type="radio"
                     value="Van Gogh"
-                    checked={this.state.selectedOption === "Van Gogh"}
+                    checked={this.state.question1 === "Van Gogh"}
                     onChange={this.onValueChange}
                     name = "question1"
                 />
@@ -45,7 +54,7 @@ class SurveyPage extends Component {
                 <input
                     type="radio"
                     value="Matisse"
-                    checked={this.state.selectedOption === "Matisse"}
+                    checked={this.state.question1 === "Matisse"}
                     onChange={this.onValueChange}
                     name = "question1"
                 />
@@ -57,7 +66,7 @@ class SurveyPage extends Component {
                 <input
                     type="radio"
                     value="Monet"
-                    checked={this.state.selectedOption === "Monet"}
+                    checked={this.state.question1 === "Monet"}
                     onChange={this.onValueChange}
                     name = "question1"
                 />
@@ -65,7 +74,7 @@ class SurveyPage extends Component {
                 </label>
             </div>
             <div>
-                <h3>Your selected artist is : {this.state.selectedOption} </h3>
+                <h3>Your selected artist is : {this.state.question1} </h3>
             </div>
             
           <Link to="/"><button className="btn btn-default" type="submit">
