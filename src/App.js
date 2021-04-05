@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link } from "react-router-dom";
 import loading from './loading.gif';
-import Quiz from "./Quiz.js";
 
 const axios = require('axios')
 
@@ -80,7 +79,6 @@ export default class App extends Component {
               Which artist are you?
             </button>
             </Link>
-            {/* <Quiz /> */}
           </div>
         </div>
          

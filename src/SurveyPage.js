@@ -134,7 +134,7 @@ export default class SurveyPage extends Component {
                     Submit
                 </button>
                 <div>
-                    <h3>The artist you're most like is : {this.state.answer} </h3>
+                    <h3>The artist you're most similar to is : {this.state.answer}</h3>
                 </div>
                 <Link to="/">
                 <button className="btn btn-default">
