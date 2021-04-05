@@ -1,0 +1,18 @@
+/* CTA */
+.CTA {
+    display: block;
+    background-color: black;
+    margin: var(--ctaButton-margin);
+    padding: var(--ctaButton-padding) var(--ctaButton-padding);
+}
+
+@media screen and (max-width: 991px) {
+    .CTA {
+        margin-left: 0;
+    }
+}
+
+.CTAButton {
+    text-decoration: none;
+    color: white;
+}
