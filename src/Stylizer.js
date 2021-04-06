@@ -4,7 +4,7 @@ import {Link } from "react-router-dom";
 
 // const axios = require('axios')
 
-export default class Sylizer extends Component {
+export default class Stylizer extends Component {
   constructor(props){
     super(props)
     this.state = {
