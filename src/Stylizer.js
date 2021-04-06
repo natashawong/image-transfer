@@ -43,6 +43,7 @@ export default class Sylizer extends Component {
   }
 
 // TODO: make three target image options, and link to backend
+// sample push
   render() {
       return (
         <div>
