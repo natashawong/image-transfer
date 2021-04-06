@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './index.css';
 import Page1 from './App';
 import Page2 from "./SurveyPage";
+import Page3 from "./Stylizer";
 import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById("root");
@@ -13,6 +14,7 @@ const rootElement = document.getElementById("root");
        <Switch>
         <Route exact path="/" component={Page1} />
         <Route path="/SurveyPage" component={Page2} />
+        <Route path="/Stylizer" component={Page3} />
       </Switch>
       </BrowserRouter>,
       rootElement

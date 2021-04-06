@@ -79,6 +79,10 @@ export default class App extends Component {
               Which artist are you?
             </button>
             </Link>
+            <Link to="/Stylizer"><button>
+              Which artist are you?
+            </button>
+            </Link>
           </div>
         </div>
          
