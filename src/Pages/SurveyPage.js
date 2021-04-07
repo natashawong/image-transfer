@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link } from "react-router-dom";
+import {Link}  from "react-router-dom";
 
 export default class SurveyPage extends Component {
     constructor() {
@@ -136,10 +136,12 @@ export default class SurveyPage extends Component {
                 <div>
                     <h3>The artist you're most like is : {this.state.answer} </h3>
                 </div>
+                
                 <Link to="/">
                 <button className="btn btn-default">
                     Back to Home
-                </button></Link>
+                </button>
+                </Link>
                
                 </form>
             </div>
