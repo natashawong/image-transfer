@@ -2,46 +2,86 @@ import React, { Component } from "react";
 import {Link}  from "react-router-dom";
 import "./Home.css";
 
+import vanGogh from '../Assets/van_gogh.jpg';
+import matisse from '../Assets/matisse.jpg';
+import monet from '../Assets/monet.jpg';
+import orig from '../Assets/orig.jpg';
+import result from '../Assets/result.png';
+
+import {SPACING, TEXTSIZE, COLOURS} from '../styles';
+
 export default class SurveyPage extends Component {
     constructor() {
         super();
         this.state = {
+            selectedStyle: "",
         }
     }
 
+    select(selectedStyle) {
+        this.setState({selectedStyle: selectedStyle})
+    }
+
     render() {
+        const OPTIONS = {
+            VANGOGH: "vanGogh",
+            MATISSE: "matisse",
+            MONET: "monet",
+        }
+
         return(
-            <div>
-                <p>Famous Filters</p>
-                <p>Apply a filter with a beautiful famous painting!</p>
+            <div style={{margin: SPACING.PAGE}}>
+                <div style={{display: "flex", textAlign: "center", flexDirection: "column", paddingBottom: 50}}>
+                    <p style={{fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold"}}>Famous Filters</p>
+                    <p style={{fontSize: TEXTSIZE.MEDIUM}}>Apply a filter with a beautiful famous painting!</p>
+                </div>
 
                 <div>
-                    <p>Let's get started! Which artist style do you want to use?</p>
+                    <p style={{fontSize: TEXTSIZE.SMALL, fontWeight: "bold"}}>Let's get started! Which artist style do you want to use?</p>
                     
                     <div className="imageRow">
-                        {/* image 1 2 3, float horizontal */}
+                        <div className="styleImageChoice" onClick={() => this.select(OPTIONS.VANGOGH)} >
+                        <div style={this.state.selectedStyle == OPTIONS.VANGOGH ? {backgroundColor: COLOURS.LIGHTPINK} : null}>
+                        <img src={vanGogh} alt="Van Gogh" className="styleImage"/>
+                        </div>
+                        <p style={{fontSize: TEXTSIZE.SMALL}}>Van Gogh</p>
+                        </div>
+
+                        <div className="styleImageChoice" onClick={() => this.select(OPTIONS.MATISSE)}>
+                        <div style={this.state.selectedStyle == OPTIONS.MATISSE ? {backgroundColor: COLOURS.LIGHTPINK} : null}>
+                        <img src={matisse} alt="Matisse" className="styleImage"/>
+                        </div>
+                        <p style={{fontSize: TEXTSIZE.SMALL}}>Matisse</p>
+                        </div>
+
+                        <div className="styleImageChoice" onClick={() => this.select(OPTIONS.MONET)}>
+                        <div style={this.state.selectedStyle == OPTIONS.MONET ? {backgroundColor: COLOURS.LIGHTPINK} : null}>
+                        <img src={monet} alt="Monet" className="styleImage"/>
+                        </div>
+                        <p style={{fontSize: TEXTSIZE.SMALL}}>Monet</p>
+                        </div>
                     </div>
                     {/* button - ready? */}
 
-                    <p>Not sure what to choose?</p>
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Not sure what to choose?</p>
                     {/* button - take a quiz */}
                 </div>
 
                 <div>
-                    <p>About:</p>
-                    <p>
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>About:</p>
+                    <p style={{fontSize: TEXTSIZE.SMALL}}>
                         a bunch of about text.
                     </p>
                 </div>
 
                 <div>
-                    <p>Example outcome with a sample style image:</p>
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold", fontStyle: "italic"}}>Example outcome with a sample style image:</p>
                     <div className="imageRow">
-                        {/* image */}
+                        <img src={orig} alt="Original" className="styleImage"/>
                         <p>+</p>
-                        {/* image */}
+                        <img src={vanGogh} alt="Van Gogh" className="styleImage"/>
                         <p>=</p>
-                        {/* image */}
+                        <img src={result} alt="Result" className="styleImage"/>
                     </div>
                 </div>
 
