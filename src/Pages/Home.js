@@ -10,7 +10,7 @@ import result from '../Assets/result.png';
 
 import {SPACING, TEXTSIZE, COLOURS} from '../styles';
 
-export default class SurveyPage extends Component {
+export default class Home extends Component {
     constructor() {
         super();
         this.state = {
