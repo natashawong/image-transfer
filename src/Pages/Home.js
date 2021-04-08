@@ -77,11 +77,24 @@ export default class Home extends Component {
                 <div>
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold", fontStyle: "italic"}}>Example outcome with a sample style image:</p>
                     <div className="imageRow">
+                        <div className="alignPhotoText">
                         <img src={orig} alt="Original" className="styleImage"/>
+                        <p style={{fontSize: TEXTSIZE.SMALL, fontStyle: "italic"}}>Selfie</p>
+                        </div>
+
                         <p>+</p>
+
+                        <div className="alignPhotoText">
                         <img src={vanGogh} alt="Van Gogh" className="styleImage"/>
+                        <p style={{fontSize: TEXTSIZE.SMALL, fontStyle: "italic"}}>Van Gogh</p>
+                        </div>
+
                         <p>=</p>
+
+                        <div className="alignPhotoText">
                         <img src={result} alt="Result" className="styleImage"/>
+                        <p style={{fontSize: TEXTSIZE.SMALL, fontStyle: "italic"}}>Stylized Image</p>
+                        </div>
                     </div>
                 </div>
 
