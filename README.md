@@ -1,6 +1,5 @@
 # Running Famous Filters Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## About
 
@@ -9,6 +8,8 @@ Our project takes an input image and applies the style of a famous artist on you
 Website: http://image-transfer.herokuapp.com/
 
 ## To run locally
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
