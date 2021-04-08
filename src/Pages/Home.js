@@ -70,7 +70,7 @@ export default class Home extends Component {
                 <div>
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>About:</p>
                     <p style={{fontSize: TEXTSIZE.SMALL}}>
-                        a bunch of about text.
+                        Our goal is to apply a cool filter on your image, using a famous artist's style.  Here's how it works:
                     </p>
                 </div>
 
@@ -96,6 +96,9 @@ export default class Home extends Component {
                         <p style={{fontSize: TEXTSIZE.SMALL, fontStyle: "italic"}}>Stylized Image</p>
                         </div>
                     </div>
+                    <p style={{fontSize: TEXTSIZE.SMALL}}>
+                        The user inputs an image and selects an artist style they want (Van Gogh, Matisse, or Monet). The result is your image with the famous artist's style!
+                    </p>
                 </div>
 
             </div>
