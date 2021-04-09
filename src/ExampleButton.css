@@ -15,8 +15,8 @@
 
 .CTAButton {
     text-decoration: none;
-    background-color: #EDAFB8;
-    border: solid #EDAFB8;
+    background-color: #B0C4B1;
+    border: solid #B0C4B1;
     border-radius: 3px;
     padding: 10px;
     color: white;
@@ -28,7 +28,7 @@
     text-decoration: solid;
     border-radius: 3px;
     padding: 10px;
-    border: solid #EDAFB8;
-    color: #EDAFB8;
+    border: solid #B0C4B1;
+    color: #B0C4B1;
     font-weight: bold;
 }
