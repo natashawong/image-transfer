@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Link}  from "react-router-dom";
+import Button from "../ExampleButton.js";
 import "./Home.css";
 
 import vanGogh from '../Assets/van_gogh.jpg';
@@ -61,10 +62,12 @@ export default class Home extends Component {
                         <p style={{fontSize: TEXTSIZE.SMALL}}>Monet</p>
                         </div>
                     </div>
-                    {/* button - ready? */}
+                    <Button link="/upload"> Ready? </Button>
+                    
 
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Not sure what to choose?</p>
-                    {/* button - take a quiz */}
+                    <Button link="/quiz"> Take a quiz </Button>
+                    
                 </div>
 
                 <div>

@@ -1,7 +1,8 @@
 /* CTA */
 .CTA {
     display: block;
-    background-color: black;
+
+    text-align: center;
     margin: var(--ctaButton-margin);
     padding: var(--ctaButton-padding) var(--ctaButton-padding);
 }
@@ -14,5 +15,16 @@
 
 .CTAButton {
     text-decoration: none;
+    background-color: #EDAFB8;
+    border: solid #EDAFB8;
+    padding: 10px;
     color: white;
+}
+
+.CTAButton:hover {
+    background-color: white;
+    text-decoration: solid;
+    padding: 10px;
+    border: solid #EDAFB8;
+    color: #EDAFB8;
 }
