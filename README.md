@@ -1,4 +1,4 @@
-# Running Famous Filters Web App
+# Famous Filters Web App
 
 
 ## About
