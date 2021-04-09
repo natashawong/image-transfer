@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link } from "react-router-dom";
 import loading from '../loading.gif';
+import Button from "../ExampleButton.js";
 
 const axios = require('axios')
 
@@ -68,19 +69,12 @@ export default class Upload extends Component {
             <button onClick={this.onClick} disabled={!this.state.isUploaded}>Style your image!</button>
           </div>
           {this.state.isSubmitted ? this.uploadScreen() : null}
-          <div>
-            <p>
-              Not sure which famous artist to choose?
-              <br />
-              Click on the button below.
-            </p>
-            <Link to="/SurveyPage"><button>
-              Which artist are you?
-            </button>
-            </Link>
-          </div>
+          <Link to="/">
+                <Button className="btn btn-default">
+                    Back to Home
+                </Button>
+                </Link>
         </div>
-         
       )
   }
 }

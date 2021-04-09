@@ -17,7 +17,7 @@
     text-decoration: none;
     background-color: #EDAFB8;
     border: solid #EDAFB8;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px;
     color: white;
     font-weight: bold;
@@ -26,7 +26,7 @@
 .CTAButton:hover {
     background-color: white;
     text-decoration: solid;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px;
     border: solid #EDAFB8;
     color: #EDAFB8;

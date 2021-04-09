@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Link}  from "react-router-dom";
+import Button from "../ExampleButton.js";
 
 export default class SurveyPage extends Component {
     constructor() {
@@ -138,9 +139,9 @@ export default class SurveyPage extends Component {
                 </div>
                 
                 <Link to="/">
-                <button className="btn btn-default">
+                <Button className="btn btn-default">
                     Back to Home
-                </button>
+                </Button>
                 </Link>
                
                 </form>
