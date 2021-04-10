@@ -38,7 +38,7 @@ export default class Upload extends Component {
     })
     formData.append("image", this.state.imageRaw)
 
-    axios.post('http://4fcd2f97c044.ngrok.io/stylize', formData)
+    axios.post('https://backend-team1.herokuapp.com/stylize', formData)
     .then(resp => console.log(resp))
     .then(resp => this.setState({isLoading: false}))
   }
@@ -53,7 +53,7 @@ export default class Upload extends Component {
             <img src={loading} alt="loading..." style={{width: 300}}/>
           </div>
           :
-          <img src="http://4fcd2f97c044.ngrok.io/result" style={{maxWidth: "500px", maxHeight: "500px"}} />
+          <img src="https://backend-team1.herokuapp.com/result" style={{maxWidth: "500px", maxHeight: "500px"}} />
         }
       </div>
     )

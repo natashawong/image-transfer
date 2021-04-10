@@ -85,14 +85,14 @@ export default class Home extends Component {
                         <p style={{fontSize: TEXTSIZE.SMALL, fontStyle: "italic"}}>Selfie</p>
                         </div>
 
-                        <p>+</p>
+                        <p style={{fontSize: TEXTSIZE.LARGE}}>+</p>
 
                         <div className="alignPhotoText">
                         <img src={vanGogh} alt="Van Gogh" className="styleImage"/>
                         <p style={{fontSize: TEXTSIZE.SMALL, fontStyle: "italic"}}>Van Gogh</p>
                         </div>
 
-                        <p>=</p>
+                        <p style={{fontSize: TEXTSIZE.LARGE}}>=</p>
 
                         <div className="alignPhotoText">
                         <img src={result} alt="Result" className="styleImage"/>
