@@ -35,6 +35,9 @@ export default class SurveyPage extends Component {
     formSubmit(event) {
         event.preventDefault();
         const artists = ["Matisse", "Van Gogh", "Monet"];
+        const bios = ["You got Matisse! This French artist was best known for his vibrant colors and multimedia work. He frequently painted the gorgeous French views he was surrounded by and invented creative shapes. Your stylized images reflect the vibrance and symbolic nature of Matisse's work.",
+                    "You got Van Gogh! This prolific artist was best known for his still lifes and breathtaking landscapes. He suffered a life rife with mental illness and died young; we can see that his painting was an outlet for his emotions. Your images will reflect turbulence and melancholy within Van Gogh's art.",
+                    "You got Monet! This French painter was hailed as a founder of Impressionism, a style characterized by small brushstrokes and accurate portrayal of light. Some of Monet's best known works are a series of water lillies from the water garden he created by his own French home. Your stylized images will reflect the detail and soft tone of Monet's work."]
         const scores = [0,0,0];
 
         if (this.state.question1 === "") {
@@ -69,6 +72,7 @@ export default class SurveyPage extends Component {
         console.log(scores);
         console.log("Max artist:" + this.indexOfMax(scores));
         this.setState({answer: artists[this.indexOfMax(scores)]})
+        this.setState({answer: bios[this.indexOfMax(scores)]})
         console.log(this.state.answer);
       }
 
@@ -135,7 +139,7 @@ export default class SurveyPage extends Component {
                     Submit
                 </button>
                 <div>
-                    <h3>The artist you're most like is : {this.state.answer} </h3>
+                    <h3>{this.state.answer} </h3>
                 </div>
                 
                 <Link to="/">
