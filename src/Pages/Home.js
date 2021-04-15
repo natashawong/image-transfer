@@ -27,6 +27,7 @@ export class Home extends Component {
     }
 
     render() {
+        {/* stores choice of artist to use in upload page */}
         const OPTIONS = {
             VANGOGH: "van_gogh",
             MATISSE: "matisse",
@@ -43,6 +44,7 @@ export class Home extends Component {
                 <div>
                     <p style={{fontSize: TEXTSIZE.SMALL, fontWeight: "bold"}}>Let's get started! Which artist style do you want to use?</p>
                     
+                    {/* displays images of the artist style we use in model for the user */}
                     <div className="imageRow">
                         <div className="styleImageChoice" onClick={() => this.select(OPTIONS.VANGOGH)} >
                         <div style={this.state.selectedStyle == OPTIONS.VANGOGH ? {backgroundColor: COLOURS.LIGHTPINK} : null}>
@@ -73,6 +75,7 @@ export class Home extends Component {
                     
                 </div>
 
+                {/* ABOUT PAGE */}
                 <div>
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>About:</p>
                     <p style={{fontSize: TEXTSIZE.SMALL}}>

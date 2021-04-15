@@ -33,6 +33,7 @@ export default class SurveyPage extends Component {
     }
 
     formSubmit(event) {
+        
         event.preventDefault();
         const artists = ["Matisse", "Van Gogh", "Monet"];
         const bios = ["You got Matisse! This French artist was best known for his vibrant colors and multimedia work. He frequently painted the gorgeous French views he was surrounded by and invented creative shapes. Your stylized images reflect the vibrance and symbolic nature of Matisse's work.",
@@ -40,6 +41,7 @@ export default class SurveyPage extends Component {
                     "You got Monet! This French painter was hailed as a founder of Impressionism, a style characterized by small brushstrokes and accurate portrayal of light. Some of Monet's best known works are a series of water lillies from the water garden he created by his own French home. Your stylized images will reflect the detail and soft tone of Monet's work."]
         const scores = [0,0,0];
 
+        {/* Accounts for edge case when user doesn't submit a question */}
         if (this.state.question1 === "") {
             alert("Select an answer for question 1");
         } else if (this.state.question2 === "") {
@@ -49,7 +51,8 @@ export default class SurveyPage extends Component {
         } else if (this.state.question4 === "") {
             alert("Select an answer for question 4");
         } else {
-            console.log("these r the artists" + artists);
+            {/* Calculates point values */}
+            console.log("these are the artists" + artists);
             {artists.map((artist, index) => {
                 if (this.state.question1 === artist) {
                     scores[index] += 1
@@ -77,6 +80,7 @@ export default class SurveyPage extends Component {
       }
 
     indexOfMax(arr) {
+        {/* Gets the maximum artist index in array */}
         if (arr.length === 0) {
             return -1;
         }

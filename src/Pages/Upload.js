@@ -78,6 +78,8 @@ export class Upload extends Component {
   render() {
       return (
         <div>
+          {/* For now, we are using a "hack-y" approach of making the user input colab link */}
+          {/* We will be automating this process in the future for colab to automatically run */}
           <h1>Connect to our backend: </h1>
             <p>Navigate to <a href= "https://colab.research.google.com/drive/19yEuw8gtzWdb_zDL-R14dnK81oGQMifQ?usp=sharing" target="_blank"> Colab</a>.</p>
             <p>Paste the url after "Running on" that ends in ngrok.io below.</p>

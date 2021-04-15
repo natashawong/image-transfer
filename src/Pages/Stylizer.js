@@ -53,10 +53,6 @@ export default class Stylizer extends Component {
   handleNgrokLink = (event) => {
     this.setState({
       ngrok_address: event.target.value 
-      
-      // imageDisplay: URL.createObjectURL(event.target.files[0]),
-      // imageRaw: event.target.files[0],
-      // isUploaded: true,
     });
     window.alert(this.state.ngrok_address);
   };
