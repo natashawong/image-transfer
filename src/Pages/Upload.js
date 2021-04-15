@@ -53,7 +53,8 @@ export default class Upload extends Home {
     formData.append("image", this.state.imageRaw)
     formData.append("style", this.selectedStyle)
 
-    axios.post(this.state.ngrok_address+"/stylize", formData)
+
+    axios.post('https://backend-team1.herokuapp.com/stylize', formData)
     .then(resp => console.log(resp))
     .then(resp => this.setState({isLoading: false}))
   }
