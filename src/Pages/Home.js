@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {Link}  from "react-router-dom";
 import Button from "../ExampleButton.js";
 import "./Home.css";
 
@@ -10,9 +9,11 @@ import orig from '../Assets/orig.jpg';
 import result from '../Assets/result.png';
 
 import {SPACING, TEXTSIZE, COLOURS} from '../styles';
-export const selectedStyle = "van_gogh";
 
-export default class Home extends Component {
+import { connect } from 'react-redux';
+import { setStyle } from '../actions';
+
+export class Home extends Component {
     constructor() {
         super();
         this.state = {
@@ -22,6 +23,7 @@ export default class Home extends Component {
 
     select(selectedStyle) {
         this.setState({selectedStyle: selectedStyle})
+        this.props.setStyle(selectedStyle);
     }
 
     render() {
@@ -63,7 +65,7 @@ export default class Home extends Component {
                         <p style={{fontSize: TEXTSIZE.SMALL}}>Monet</p>
                         </div>
                     </div>
-                    <Button link="/upload" selectedStyle={this.state.selectedStyle}> Ready? </Button>
+                    <Button link="/upload"> Ready? </Button>
                     
 
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Not sure what to choose?</p>
@@ -111,3 +113,7 @@ export default class Home extends Component {
     }
 }
 
+export default connect(
+    null, 
+    { setStyle }
+)(Home);

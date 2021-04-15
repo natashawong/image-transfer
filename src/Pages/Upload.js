@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import Home from "./Home.js";
 import {Link } from "react-router-dom";
 import loading from '../loading.gif';
 import Button from "../ExampleButton.js";
 
+import { connect } from 'react-redux';
+
 const axios = require('axios')
 
-export default class Upload extends Home {
+export class Upload extends Component {
   constructor(props){
     super(props)
     this.state = {
-      selectedStyle: "van_gogh",
       imageDisplay: null,
       imageRaw: null,
       isLoading: true,
@@ -21,8 +21,7 @@ export default class Upload extends Home {
   }
 
   testChange = () => {
-    this.state.selectedStyle = "van_gogh"
-    window.alert("Style is: " + this.selectedStyle)
+    window.alert("Style is: " + this.props.selectedStyle.data)
   }
   
   handleChange = (event) => {
@@ -51,7 +50,7 @@ export default class Upload extends Home {
       isUploaded: false
     })
     formData.append("image", this.state.imageRaw)
-    formData.append("style", this.selectedStyle)
+    formData.append("style", this.props.selectedStyle.data)
 
 
     axios.post('https://backend-team1.herokuapp.com/stylize', formData)
@@ -103,3 +102,9 @@ export default class Upload extends Home {
       )
   }
 }
+
+const mapStateToProps = state => ({
+  selectedStyle: state.selectedStyle,
+});
+
+export default connect(mapStateToProps)(Upload)
