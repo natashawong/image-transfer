@@ -10,6 +10,7 @@ import orig from '../Assets/orig.jpg';
 import result from '../Assets/result.png';
 
 import {SPACING, TEXTSIZE, COLOURS} from '../styles';
+export const selectedStyle = "van_gogh";
 
 export default class Home extends Component {
     constructor() {
@@ -25,7 +26,7 @@ export default class Home extends Component {
 
     render() {
         const OPTIONS = {
-            VANGOGH: "vanGogh",
+            VANGOGH: "van_gogh",
             MATISSE: "matisse",
             MONET: "monet",
         }
@@ -62,7 +63,7 @@ export default class Home extends Component {
                         <p style={{fontSize: TEXTSIZE.SMALL}}>Monet</p>
                         </div>
                     </div>
-                    <Button link="/upload"> Ready? </Button>
+                    <Button link="/upload" selectedStyle={this.state.selectedStyle}> Ready? </Button>
                     
 
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Not sure what to choose?</p>
@@ -103,8 +104,10 @@ export default class Home extends Component {
                         The user inputs an image and selects an artist style they want (Van Gogh, Matisse, or Monet). The result is your image with the famous artist's style!
                     </p>
                 </div>
+                
 
             </div>
         )
     }
 }
+

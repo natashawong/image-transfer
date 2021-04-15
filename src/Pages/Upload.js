@@ -1,20 +1,28 @@
 import React, {Component} from 'react';
+import Home from "./Home.js";
 import {Link } from "react-router-dom";
 import loading from '../loading.gif';
 import Button from "../ExampleButton.js";
 
 const axios = require('axios')
 
-export default class Upload extends Component {
+export default class Upload extends Home {
   constructor(props){
     super(props)
     this.state = {
+      selectedStyle: "van_gogh",
       imageDisplay: null,
       imageRaw: null,
       isLoading: true,
       isUploaded: false,
       isSubmitted: false,
+      ngrok_address: ""
     }
+  }
+
+  testChange = () => {
+    this.state.selectedStyle = "van_gogh"
+    window.alert("Style is: " + this.selectedStyle)
   }
   
   handleChange = (event) => {
@@ -24,6 +32,12 @@ export default class Upload extends Component {
       isUploaded: true
     })
   }
+
+  handleNgrokChange = (event) => {
+    this.setState({
+      ngrok_address: event.target.value 
+    });
+  };
 
   handleSubmit(event) {
     alert('Your response was submitted: ' + this.state.value);
@@ -37,12 +51,14 @@ export default class Upload extends Component {
       isUploaded: false
     })
     formData.append("image", this.state.imageRaw)
+    formData.append("style", this.selectedStyle)
 
-    axios.post('http://4fcd2f97c044.ngrok.io/stylize', formData)
+    axios.post(this.state.ngrok_address+"/stylize", formData)
     .then(resp => console.log(resp))
     .then(resp => this.setState({isLoading: false}))
   }
 
+  // TODO: add error if waiting for more than 30 sec
   uploadScreen = () => {
     return(
       <div>
@@ -53,7 +69,7 @@ export default class Upload extends Component {
             <img src={loading} alt="loading..." style={{width: 300}}/>
           </div>
           :
-          <img src="http://4fcd2f97c044.ngrok.io/result" style={{maxWidth: "500px", maxHeight: "500px"}} />
+          <img src= {this.state.ngrok_address + "/result"} style={{maxWidth: "500px", maxHeight: "500px"}} />
         }
       </div>
     )
@@ -62,6 +78,14 @@ export default class Upload extends Component {
   render() {
       return (
         <div>
+          <h1>Connect to our backend: </h1>
+            <p>Navigate to <a href= "https://colab.research.google.com/drive/19yEuw8gtzWdb_zDL-R14dnK81oGQMifQ?usp=sharing" target="_blank"> Colab</a>.</p>
+            <p>Paste the url after "Running on" that ends in ngrok.io below.</p>
+            Ngrok link: 
+            <label>
+            <input type="text" value={this.state.value} onChange={this.handleNgrokChange} name="link"/>
+            </label>
+          <button onClick={this.testChange} type="submit">Submit</button>
           <h1>Upload an image that you want to be changed into your chosen style:</h1>
           <div id="inputs">
             <input type="file" encType="multipart/form-data" accept="image/jpeg, image/png" name="image" id="file" onChange={this.handleChange}/>
