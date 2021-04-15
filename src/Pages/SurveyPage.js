@@ -146,12 +146,10 @@ export default class SurveyPage extends Component {
                     <h3>{this.state.answer} </h3>
                 </div>
 
-                <Link to="/upload">
-                <Button className="btn btn-default">
-                    Use this artist
-                </Button>
-                </Link>
-                
+                <Button link="/upload"> Use this artist </Button>
+               
+                <br></br>
+                <br />
                 <Link to="/">
                 <Button className="btn btn-default">
                     Back to Home
@@ -163,7 +161,3 @@ export default class SurveyPage extends Component {
         )
     }
 }
-export default connect(
-    null, 
-    { setStyle }
-)(Survey);
