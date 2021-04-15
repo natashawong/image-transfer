@@ -36,9 +36,9 @@ export default class SurveyPage extends Component {
         
         event.preventDefault();
         const artists = ["Matisse", "Van Gogh", "Monet"];
-        const bios = ["You got Matisse! This French artist was best known for his vibrant colors and multimedia work. He frequently painted the gorgeous French views he was surrounded by and invented creative shapes. Your stylized images reflect the vibrance and symbolic nature of Matisse's work.",
-                    "You got Van Gogh! This prolific artist was best known for his still lifes and breathtaking landscapes. He suffered a life rife with mental illness and died young; we can see that his painting was an outlet for his emotions. Your images will reflect turbulence and melancholy within Van Gogh's art.",
-                    "You got Monet! This French painter was hailed as a founder of Impressionism, a style characterized by small brushstrokes and accurate portrayal of light. Some of Monet's best known works are a series of water lillies from the water garden he created by his own French home. Your stylized images will reflect the detail and soft tone of Monet's work."]
+        const bios = ["You got Matisse! This French artist was best known for his vibrant colors and multimedia work. He frequently painted the gorgeous French views he was surrounded by and invented creative shapes. Your stylized images reflect the vibrance and symbolic nature of Matisse's work. Head back to the home page and select Matisse :)",
+                    "You got Van Gogh! This prolific artist was best known for his still lifes and breathtaking landscapes. He suffered a life rife with mental illness and died young; we can see that his painting was an outlet for his emotions. Your images will reflect turbulence and melancholy within Van Gogh's art. Head back to the home page and select Van Gogh :)",
+                    "You got Monet! This French painter was hailed as a founder of Impressionism, a style characterized by small brushstrokes and accurate portrayal of light. Some of Monet's best known works are a series of water lillies from the water garden he created by his own French home. Your stylized images will reflect the detail and soft tone of Monet's work. Head back to the home page and select Monet :)"]
         const scores = [0,0,0];
 
         {/* Accounts for edge case when user doesn't submit a question */}
