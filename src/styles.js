@@ -1,11 +1,12 @@
 export const SPACING = {
-    PAGE: 30
+    PAGE: 150,
+    SECTIONS: 50,
 }
 
 export const TEXTSIZE = {
-    LARGE: 45,
-    MEDIUM: 30,
-    SMALL: 24
+    LARGE: 60,
+    MEDIUM: 32,
+    SMALL: 18
 }
 
 export const COLOURS = {

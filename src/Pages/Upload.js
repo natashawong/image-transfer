@@ -67,7 +67,7 @@ export class Upload extends Component {
   // TODO: add error if waiting for more than 30 sec
   uploadScreen = () => {
     return (
-      <div class="alignPhotoText">
+      <div className="alignPhotoText">
         <h1>Your image style transfer result is: </h1>
         {this.state.isLoading ? (
           <div className="loading">
@@ -86,11 +86,11 @@ export class Upload extends Component {
 
   render() {
     return (
-      <div style={{ margin: SPACING.PAGE }}>
+      <div style={{padding: SPACING.PAGE, paddingTop: SPACING.SECTIONS}}>
         {/* For now, we are using a "hack-y" approach of making the user input colab link */}
         {/* We will be automating this process in the future for colab to automatically run */}
         <div
-          class="alignPhotoText"
+          className="alignPhotoText"
         >
           <h1
             style={{ fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold" }}
@@ -133,13 +133,13 @@ export class Upload extends Component {
           Submit
         </Button>
         <div
-          class="alignPhotoText"
+          className="alignPhotoText"
         >
         <h1 style={{ fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold" }}>
           Upload image for stylizing
         </h1>
         
-        <div id="inputs" style = {{padding: "25px 25px 25px 25px"}}>
+        <div id="inputs" style = {{padding: SPACING.SECTIONS}}>
           <input
             type="file"
             encType="multipart/form-data"
@@ -158,9 +158,15 @@ export class Upload extends Component {
         </div>
         </div>
         {this.state.isSubmitted ? this.uploadScreen() : null}
-        <Link to="/">
-          <Button className="btn btn-default" style = {{padding: "25px 25px 25px 25px"}}>Back to Home</Button>
-        </Link>
+
+        <Button 
+          link="/"
+          style={{paddingTop: SPACING.SECTIONS}}
+          buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
+        >
+          Back to Home
+        </Button>
+
       </div>
     );
   }

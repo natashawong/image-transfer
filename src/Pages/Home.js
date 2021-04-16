@@ -35,17 +35,17 @@ export class Home extends Component {
         }
 
         return(
-            <div style={{margin: SPACING.PAGE}}>
-                <div style={{display: "flex", textAlign: "center", flexDirection: "column", paddingBottom: 50}}>
+            <div style={{margin: SPACING.PAGE, marginTop: SPACING.SECTIONS}}>
+                <div style={{display: "flex", textAlign: "center", flexDirection: "column", paddingBottom: SPACING.SECTIONS}}>
                     <p style={{fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold"}}>Famous Filters</p>
                     <p style={{fontSize: TEXTSIZE.MEDIUM}}>Apply a filter with a beautiful famous painting!</p>
                 </div>
 
-                <div>
-                    <p style={{fontSize: TEXTSIZE.SMALL, fontWeight: "bold"}}>Let's get started! Which artist style do you want to use?</p>
+                <div style={{display: "flex", flexDirection: "column"}}>
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Let's get started! Which artist style do you want to use?</p>
                     
                     {/* displays images of the artist style we use in model for the user */}
-                    <div className="imageRow">
+                    <div className="imageRow" style={{paddingBottom: SPACING.SECTIONS}}>
                         <div className="styleImageChoice" onClick={() => this.select(OPTIONS.VANGOGH)} >
                         <div style={this.state.selectedStyle == OPTIONS.VANGOGH ? {backgroundColor: COLOURS.LIGHTPINK} : null}>
                         <img src={vanGogh} alt="Van Gogh" className="styleImage"/>
@@ -67,16 +67,17 @@ export class Home extends Component {
                         <p style={{fontSize: TEXTSIZE.SMALL}}>Monet</p>
                         </div>
                     </div>
-                    <Button link="/upload"> Ready? </Button>
-                    
 
-                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Not sure what to choose?</p>
-                    <Button link="/quiz"> Take a quiz </Button>
+                    <Button link="/upload" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Ready? </Button>
+                    
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold", paddingBottom: SPACING.SECTIONS}}>Not sure what to choose?</p>
+
+                    <Button link="/quiz" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Take a quiz </Button>
                     
                 </div>
 
                 {/* ABOUT PAGE */}
-                <div>
+                <div style={{paddingTop: SPACING.SECTIONS, paddingBottom: SPACING.SECTIONS}}>
                     <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>About:</p>
                     <p style={{fontSize: TEXTSIZE.SMALL}}>
                         Our goal is to apply a cool filter on your image, using a famous artist's style.  Here's how it works:
