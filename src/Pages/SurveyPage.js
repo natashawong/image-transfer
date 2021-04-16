@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import {Link}  from "react-router-dom";
 import Button from "../ExampleButton.js";
 
+import "./Stylesheet.css";
+
+import { SPACING, TEXTSIZE, COLOURS } from "../styles";
+
 export default class SurveyPage extends Component {
     constructor() {
         super();

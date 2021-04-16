@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "../ExampleButton.js";
-import "./Home.css";
+import "./Stylesheet.css";
 
 import vanGogh from '../Assets/van_gogh.jpg';
 import matisse from '../Assets/matisse.jpg';
