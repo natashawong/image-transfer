@@ -67,7 +67,7 @@ export class Upload extends Component {
   // TODO: add error if waiting for more than 30 sec
   uploadScreen = () => {
     return (
-      <div className="alignPhotoText">
+      <div className="imageRow">
         <h1>Your image style transfer result is: </h1>
         {this.state.isLoading ? (
           <div className="loading">
@@ -126,7 +126,7 @@ export class Upload extends Component {
         
         <Button
           style = {{padding: "25px 25px 150px 25px"}}
-          className="btn btn-default"
+          link ="/upload"
           onClick={this.testChange}
           type="submit"
         >
