@@ -1,5 +1,7 @@
 const initialState = {
     selectedStyle: "",
+    result: "",
+    original: "",
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -8,6 +10,18 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 selectedStyle: action.payload,
+            }
+        }
+        case "SET_RESULT": {
+            return {
+                ...state,
+                result: action.payload,
+            }
+        }
+        case "SET_ORIGINAL": {
+            return {
+                ...state,
+                original: action.payload,
             }
         }
         default:
