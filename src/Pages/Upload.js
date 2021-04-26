@@ -11,6 +11,27 @@ import { setResult, setOriginal} from '../actions';
 
 const axios = require("axios");
 
+const download = e => {
+  console.log(e.target.href);
+  fetch(e.target.href, {
+    method: "GET",
+    headers: {}
+  })
+    .then(response => {
+      response.arrayBuffer().then(function(buffer) {
+        const url = window.URL.createObjectURL(new Blob([buffer]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "image.png"); //or any other extension
+        document.body.appendChild(link);
+        link.click();
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
 document.body.style = 'background: #fcf2f7;';
 
 export class Upload extends Component {
@@ -22,7 +43,6 @@ export class Upload extends Component {
       isLoading: true,
       isUploaded: false,
       isSubmitted: false,
-      ngrok_address: "",
       result: null,
     };
   }
@@ -40,12 +60,6 @@ export class Upload extends Component {
     this.props.setOriginal(URL.createObjectURL(event.target.files[0]))
   };
 
-  handleNgrokChange = (event) => {
-    this.setState({
-      ngrok_address: event.target.value,
-    });
-  };
-
   handleSubmit(event) {
     alert("Your response was submitted: " + this.state.value);
     event.preventDefault();
@@ -61,12 +75,12 @@ export class Upload extends Component {
     formData.append("style", this.props.selectedStyle.data);
 
     axios
-      .post(this.state.ngrok_address + "/stylize", formData)
+      .post("http://35.222.245.252:5000/stylize", formData)
       .then(() => this.setState({ 
-        result: this.state.ngrok_address + "/result",
+        result: "http://35.222.245.252:5000/result",
         isLoading: false
       }))
-      .then(() => this.props.setResult(this.state.ngrok_address + "/result"))
+      .then(() => this.props.setResult("http://35.222.245.252:5000/result"))
       .then(() => this.props.history.push('result'));
   };
 
@@ -87,44 +101,6 @@ export class Upload extends Component {
   render() {
     return (
       <div style={{padding: SPACING.PAGE, paddingTop: SPACING.SECTIONS}}>
-        {/* For now, we are using a "hack-y" approach of making the user input colab link */}
-        {/* We will be automating this process in the future for colab to automatically run */}
-        <div className="alignPhotoText">
-          <h1 style={{ fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold" }}>
-            Connect to backend
-          </h1>
-
-          <div style={{ fontSize: TEXTSIZE.SMALL }}>
-            <p>
-              1. Navigate to {" "} 
-              <a href="https://colab.research.google.com/drive/19yEuw8gtzWdb_zDL-R14dnK81oGQMifQ?usp=sharing" target="_blank">
-                {" "} Colab
-              </a>
-              .
-            </p>
-
-            <p> 2. Paste the url after "Running on" that ends in ngrok.io below. </p>
-            <p>Ngrok link:</p>
-          </div>
-
-          <label>
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleNgrokChange}
-              name="link"
-            />
-          </label>
-        </div>
-
-        <Button
-          style = {{padding: "25px 25px 150px 25px"}}
-          link ="/upload"
-          onClick={this.testChange}
-          type="submit"
-        >
-          Submit
-        </Button>
 
         <div className="alignPhotoText">
           <h1 style={{ fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold" }}>
@@ -148,6 +124,18 @@ export class Upload extends Component {
           </div>
         </div>
         {this.state.isSubmitted ? this.uploadScreen() : null}
+
+        <div>
+          {/* TODO (Elizabeth): change to button format so that link = ngrok */}
+          <a
+          href={"http://35.222.245.252:5000/result"}
+          download
+          onClick={e => download(e)}
+          >
+          <i className="fa fa-download" />
+          download
+        </a>
+        </div>
 
         <Button 
           link="/"
