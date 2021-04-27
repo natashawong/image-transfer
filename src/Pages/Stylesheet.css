@@ -22,3 +22,26 @@
   flex-direction: column;
   text-align: center;
 }
+
+#ngrok {
+    text-decoration: none;
+    background-color: #B0C4B1;
+    border: solid #B0C4B1;
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    align-items: center;
+    font-size: 18px;
+}
+
+#ngrok:hover {
+    background-color: white;
+    text-decoration: solid;
+    border-radius: 3px;
+    padding: 10px;
+    border: solid #B0C4B1;
+    color: #B0C4B1;
+    font-weight: bold;
+}

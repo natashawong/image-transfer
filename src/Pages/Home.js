@@ -71,7 +71,6 @@ export class Home extends Component {
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
                     <Button link="/upload" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Ready? </Button>
                     
-                    {/* <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold", paddingBottom: SPACING.SECTIONS}}>Not sure what to choose?</p> */}
 
                     <Button link="/quiz" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Take a quiz </Button>
                     </div>
