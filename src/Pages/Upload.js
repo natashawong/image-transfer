@@ -87,7 +87,7 @@ export class Upload extends Component {
   // TODO: add error if waiting for more than 30 sec
   uploadScreen = () => {
     return (
-      <div className="imageRow">
+      <div className="alignPhotoText" >
         {this.state.isLoading ? (
           <div className="loading">
             <p>Our model is hard at work...</p>
