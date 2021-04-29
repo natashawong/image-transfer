@@ -92,7 +92,7 @@ export class Upload extends Component {
             <img src={loading} alt="loading..." style={{ width: 300 }} />
           </div>
         ) : (
-          <img style={{maxHeight: "500", maxWidth: "500"}} src={this.state.result}/>
+          <img style={{maxHeight: "300", maxWidth: "300"}} src={this.state.result}/>
         )}
       </div>
     );
@@ -126,13 +126,13 @@ export class Upload extends Component {
         {this.state.isSubmitted ? this.uploadScreen() : null}
 
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
-          <Button id="ngrok" link={"http://35.222.245.252:5000/result"}
+          <button id="ngrok" link={"http://35.222.245.252:5000/result"}
           download
           style={{paddingTop: SPACING.SECTIONS}}
           buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
           onClick={e => download(e)}>
           <i className="fa fa-download" />Download
-          </Button>
+          </button>
         </div>
 
         <Button 
