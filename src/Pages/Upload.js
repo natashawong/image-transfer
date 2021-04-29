@@ -12,8 +12,7 @@ import { setResult, setOriginal} from '../actions';
 const axios = require("axios");
 
 const download = e => {
-  console.log(e.target.href);
-  fetch(e.target.href, {
+  fetch("http://35.222.245.252:5000/result", {
     method: "GET",
     headers: {}
   })
@@ -126,7 +125,7 @@ export class Upload extends Component {
         {this.state.isSubmitted ? this.uploadScreen() : null}
 
         <div style={{display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: SPACING.SECTIONS}}>
-          <button id="ngrok" link={"http://35.222.245.252:5000/result"}
+          <button id="ngrok"
           download
           buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
           onClick={e => download(e)}>
