@@ -2,6 +2,8 @@
 
 **Note:** Since we are running with a GPU, please contact us (esong22@cmc.edu, nwong22@cmc.edu, phchen@g.hmc.edu, ekazarian@g.hmc.edu) if you would like a live demo of the web app with the image stylizing function.
 
+A video demo can be found at the following link: [Video demo] (https://drive.google.com/file/d/1GYCnYsx67mFaavUAxhwvTWe02annd68p/view?usp=sharing)
+
 ## About
 
 Our project takes an input image and applies the style of a famous artist on your image! You will see a beautifully transformed image that combines a famous artist's style like Van Gogh's Starry Night painting.
