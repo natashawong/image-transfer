@@ -1,6 +1,6 @@
 # Famous Filters Web App
 
-**Note:** Since we are running with a CPU, please contact us (esong22@cmc.edu, nwong22@cmc.edu, phchen@g.hmc.edu, ekazarian@g.hmc.edu) if you would like a live demo of the web app with the image stylizing function.
+**Note:** Since we are running with a GPU, please contact us (esong22@cmc.edu, nwong22@cmc.edu, phchen@g.hmc.edu, ekazarian@g.hmc.edu) if you would like a live demo of the web app with the image stylizing function.
 
 ## About
 
