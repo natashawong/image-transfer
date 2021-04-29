@@ -80,8 +80,6 @@ export class Upload extends Component {
         result: "http://35.222.245.252:5000/result",
         isLoading: false
       }))
-      .then(() => this.props.setResult("http://35.222.245.252:5000/result"))
-      .then(() => this.props.history.push('result'));
   };
 
   // TODO: add error if waiting for more than 30 sec
@@ -93,7 +91,9 @@ export class Upload extends Component {
             <p>Our model is hard at work...</p>
             <img src={loading} alt="loading..." style={{ width: 300 }} />
           </div>
-        ) : null}
+        ) : (
+          <img style={{maxHeight: "500", maxWidth: "500"}} src={this.state.result}/>
+        )}
       </div>
     );
   };
@@ -126,11 +126,13 @@ export class Upload extends Component {
         {this.state.isSubmitted ? this.uploadScreen() : null}
 
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
-          <button id="ngrok" link={"http://35.222.245.252:5000/result"}
+          <Button id="ngrok" link={"http://35.222.245.252:5000/result"}
           download
+          style={{paddingTop: SPACING.SECTIONS}}
+          buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
           onClick={e => download(e)}>
           <i className="fa fa-download" />Download
-          </button>
+          </Button>
         </div>
 
         <Button 
