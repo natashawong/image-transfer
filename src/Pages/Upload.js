@@ -125,10 +125,10 @@ export class Upload extends Component {
         </div>
         {this.state.isSubmitted ? this.uploadScreen() : null}
 
-        <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: SPACING.SECTIONS}}>
           <button id="ngrok" link={"http://35.222.245.252:5000/result"}
           download
-          buttonStyle={{paddingTop: SPACING.SECTIONS, paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
+          buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
           onClick={e => download(e)}>
           <i className="fa fa-download" />Download
           </button>
