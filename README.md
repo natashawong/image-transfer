@@ -1,5 +1,6 @@
 # Famous Filters Web App
 
+**Note:** Since we are running with a CPU, please contact us (esong22@cmc.edu) if you would like a live demo of the web app with the image stylizing function.
 
 ## About
 
