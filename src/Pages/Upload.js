@@ -12,8 +12,7 @@ import { setResult, setOriginal} from '../actions';
 const axios = require("axios");
 
 const download = e => {
-  console.log(e.target.href);
-  fetch(e.target.href, {
+  fetch("http://35.222.245.252:5000/result", {
     method: "GET",
     headers: {}
   })
@@ -80,20 +79,20 @@ export class Upload extends Component {
         result: "http://35.222.245.252:5000/result",
         isLoading: false
       }))
-      .then(() => this.props.setResult("http://35.222.245.252:5000/result"))
-      .then(() => this.props.history.push('result'));
   };
 
   // TODO: add error if waiting for more than 30 sec
   uploadScreen = () => {
     return (
-      <div className="imageRow">
+      <div className="alignPhotoText" >
         {this.state.isLoading ? (
           <div className="loading">
             <p>Our model is hard at work...</p>
             <img src={loading} alt="loading..." style={{ width: 300 }} />
           </div>
-        ) : null}
+        ) : (
+          <img style={{maxHeight: "300", maxWidth: "300"}} src={this.state.result}/>
+        )}
       </div>
     );
   };
@@ -125,9 +124,10 @@ export class Upload extends Component {
         </div>
         {this.state.isSubmitted ? this.uploadScreen() : null}
 
-        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
-          <button id="ngrok" link={"http://35.222.245.252:5000/result"}
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: SPACING.SECTIONS}}>
+          <button id="ngrok"
           download
+          buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
           onClick={e => download(e)}>
           <i className="fa fa-download" />Download
           </button>
