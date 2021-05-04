@@ -42,8 +42,9 @@ export class Home extends Component {
                 </div>
 
                 <div style={{display: "flex", flexDirection: "column"}}>
-                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Let's get started! Which artist style do you want to use?</p>
-                    
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "bold"}}>Let's get started!</p>
+                    <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "regular"}}>Either click a painting to select your style and stylize, or take a quiz if you are unsure of a style to use.</p>
+
                     {/* displays images of the artist style we use in model for the user */}
                     <div className="imageRow" style={{paddingBottom: SPACING.SECTIONS}}>
                         <div className="styleImageChoice" onClick={() => this.select(OPTIONS.VANGOGH)} >
@@ -69,7 +70,7 @@ export class Home extends Component {
                     </div>
 
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
-                    <Button link="/upload" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Ready? </Button>
+                    <Button link="/upload" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Stylize image now </Button>
                     
 
                     <Button link="/quiz" buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}> Take a quiz </Button>
