@@ -101,11 +101,14 @@ export class Upload extends Component {
   render() {
     return (
       <div style={{padding: SPACING.PAGE, paddingTop: SPACING.SECTIONS}}>
-
         <div className="alignPhotoText">
           <h1 style={{ fontSize: TEXTSIZE.LARGE, margin: 0, fontWeight: "bold" }}>
             Upload image for stylizing
           </h1>
+
+          <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "regular"}}>
+          Instructions: First, click "Choose File" to upload an image of 500x500 px. Second, click "Style your image," after you have uploaded. Third, you can choose to download the image or return to home to try again with a different artist!
+          </p>
 
           <div id="inputs" style = {{padding: SPACING.SECTIONS}}>
             <input
