@@ -107,7 +107,7 @@ export class Upload extends Component {
           </h1>
 
           <p style={{fontSize: TEXTSIZE.MEDIUM, fontWeight: "regular"}}>
-          Instructions: First, click "Choose File" to upload an image of 500x500 px. Second, click "Style your image," after you have uploaded. Third, you can choose to download the image or return to home to try again with a different artist!
+          Instructions: First, click "Choose File" to upload an image of 500x500 px. Second, click "Style your image," after you have uploaded. Third, you can choose to download the image or return to home to try again with a different artist.
           </p>
 
           <div id="inputs" style = {{padding: SPACING.SECTIONS}}>
