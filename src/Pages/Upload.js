@@ -75,9 +75,9 @@ export class Upload extends Component {
     formData.append("style", this.props.selectedStyle.data);
 
     axios
-      .post("http://70ca69d1f1e1.ngrok.io/stylize", formData)
+      .post("http://a000ce992564.ngrok.io/stylize", formData)
       .then(() => this.setState({ 
-        result: "http://70ca69d1f1e1.ngrok.io/result",
+        result: "http://a000ce992564.ngrok.io/result",
         isLoading: false
       }))
   };
@@ -126,7 +126,7 @@ export class Upload extends Component {
         {this.state.isSubmitted ? this.uploadScreen() : null}
 
         <div style={{display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: SPACING.SECTIONS}}>
-          <button id="ngrok" link={"http://70ca69d1f1e1.ngrok.io/result"}
+          <button id="ngrok" link={"http://a000ce992564.ngrok.io/result"}
           download
           buttonStyle={{paddingLeft: SPACING.SECTIONS, paddingRight: SPACING.SECTIONS, borderRadius: 6, fontSize: TEXTSIZE.SMALL}}
           onClick={e => download(e)}>
