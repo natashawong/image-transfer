@@ -2,7 +2,7 @@
 
 **Note:** Since we are running with a GPU, please contact us (esong22@cmc.edu, nwong22@cmc.edu, phchen@g.hmc.edu, ekazarian@g.hmc.edu) if you would like a live demo of the web app with the image stylizing function.
 
-A video demo can be found at the following link: [Video demonstration](https://drive.google.com/file/d/1mCmoDT1_PwA2TryBvUX_MXb3mJoLAR5v/view?usp=sharing)
+A video demo can be found at the following link: [Video demonstration](https://drive.google.com/file/d/1mhyRQlEFlR07A4txS_fX3RFZ3x2e-5-2/view?usp=sharing)
 
 ## About
 
